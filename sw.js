@@ -4,9 +4,11 @@
 //~ Imports
 importScripts('js/sw-utils.js');
 
-const DYNAMIC_CACHE = 'dynamic-cache-v1';
+//~ Subir versión cada vez que hay un cambio
+//~ en algunos de los archivos del cache correspondiente
+const DYNAMIC_CACHE = 'dynamic-cache-v2';
 const IMMUTABLE_CACHE = 'immutable-cache-v1';
-const STATIC_CACHE = 'static-cache-v3';
+const STATIC_CACHE = 'static-cache-v4';
 
 const APP_SHELL = [
 	// '/',
@@ -44,6 +46,9 @@ self.addEventListener('activate', e => {
 	const cachesRemained = caches.keys()
 		.then(keys => {
 			keys.forEach(key => {
+				if (key !== DYNAMIC_CACHE && key.includes('dynamic')) {
+					return caches.delete(key);
+				}
 				if (key !== STATIC_CACHE && key.includes('static')) {
 					return caches.delete(key);
 				}

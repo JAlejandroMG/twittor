@@ -1,12 +1,13 @@
 {
 	"conventionalCommits.scopes": [
-		"config",
-		"format",
-		"package",
-		"readme",
-		"update",
-		"dependency",
-		"feature",
-		"project"
-	]
+        "config",
+        "format",
+        "package",
+        "readme",
+        "update",
+        "dependency",
+        "feature",
+        "project",
+        "mobile"
+    ]
 }
