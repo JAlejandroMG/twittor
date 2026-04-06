@@ -9,7 +9,7 @@ const IMMUTABLE_CACHE = 'immutable-cache-v1';
 const STATIC_CACHE = 'static-cache-v2';
 
 const APP_SHELL = [
-	'/',
+	// '/',
 	'css/style.css',
 	'img/avatars/hulk.jpg',
 	'img/avatars/ironman.jpg',
